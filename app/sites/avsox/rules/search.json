@@ -1,0 +1,47 @@
+{
+    "url":"https://avso.pw/cn",
+    "content":{
+        "type":"array",
+        "selector":".item",
+        "content":{
+            "type":"object",
+            "fields":{
+                "id":{
+                    "type":"string",
+                    "selector":".movie-box",
+                    "place":"attr",
+                    "param":"href",
+                    "postReplace":[
+                        {
+                            "origin":"https://avso.pw/cn/movie/",
+                            "newstr":"",
+                            "isReg":false
+                        }
+                    ]
+                },
+                "cover":{
+                    "type":"string",
+                    "selector":".photo-frame img",
+                    "place":"attr",
+                    "param":"src"
+                },
+                "title":{
+                    "type":"string",
+                    "selector":".photo-frame img",
+                    "place":"attr",
+                    "param":"title"
+                },
+                "code":{
+                    "type":"string",
+                    "selector":".photo-info span date:first",
+                    "place":"text"
+                },
+                "date":{
+                    "type":"string",
+                    "selector":".photo-info span date:last",
+                    "place":"text"
+                }
+            }
+        }
+    }
+}

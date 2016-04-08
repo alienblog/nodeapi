@@ -1,29 +1,29 @@
 {
-    "siteName":"avmoo",
+    "siteName":"avsox",
     "rules":{
         "index":{
             "path":":page(\\d+)*",
-            "url":"https://avmo.pw/cn/currentPage/:page",
+            "url":"https://avso.pw/cn/currentPage/:page",
             "defaultParams":{page:1}
         },
         "search":{
             "path":"search/:key/:page(\\d+)*",
-            "url":"https://avmo.pw/cn/search/:key/currentPage/:page",
+            "url":"https://avso.pw/cn/search/:key/currentPage/:page",
             "defaultParams":{page:1}
         },
         "movie":{
             "path":"movie/:id",
-            "url":"https://avmo.pw/cn/movie/:id"
+            "url":"https://avso.pw/cn/movie/:id"
         },
         "genre":{
             "path":"genre/:id/:page(\\d+)*",
-            "url":"https://avmo.pw/cn/genre/:id/currentPage/:page",
+            "url":"https://avso.pw/cn/genre/:id/currentPage/:page",
             "ruleName":"index",
             "defaultParams":{page:1}
         },
         "star":{
             "path":"star/:id/:page(\\d+)*",
-            "url":"https://avmo.pw/cn/star/:id/currentPage/:page",
+            "url":"https://avso.pw/cn/star/:id/currentPage/:page",
             "ruleName":"index",
             "defaultParams":{page:1}
         }
