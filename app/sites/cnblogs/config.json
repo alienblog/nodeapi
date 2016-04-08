@@ -1,0 +1,10 @@
+{
+    "siteName":"博客园",
+    "rules":{
+        "index":{
+            "path":":page(\\d+)*",
+            "url":"http://www.cnblogs.com/sitehome/p/:page",
+            "defaultParams":{page:1}
+        }
+    }
+}

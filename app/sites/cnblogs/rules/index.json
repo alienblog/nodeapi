@@ -1,0 +1,33 @@
+{
+    "url":"http://www.cnblogs.com",
+    "content":{
+        "type":"array",
+        "selector":".post_item",
+        "content":{
+            "type":"object",
+            "fields":{
+                "diggnum":{
+                    "type":"number",
+                    "selector":".diggnum",
+                    "place":"text"
+                },
+                "title":{
+                    "type":"string",
+                    "selector":".post_item_body h3 a",
+                    "place":"text"
+                },
+                "url":{
+                    "type":"string",
+                    "selector":".titlelnk",
+                    "place":"attr",
+                    "param":"href"
+                },
+                "description":{
+                    "type":"string",
+                    "selector":".post_item_summary",
+                    "place":"text"
+                }
+            }
+        }
+    }
+}

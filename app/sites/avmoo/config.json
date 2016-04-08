@@ -1,0 +1,32 @@
+{
+    "siteName":"avmoo",
+    "rules":{
+        "index":{
+            "path":":page(\\d+)*",
+            "url":"https://avmo.pw/cn/currentPage/:page",
+            "defaultParams":{page:1}
+        },
+        "search":{
+            "path":"search/:key/:page(\\d+)*",
+            "url":"https://avmo.pw/cn/search/:key/currentPage/:page",
+            "defaultParams":{page:1}
+        },
+        "movie":{
+            "path":"movie/:id/:page(\\d+)*",
+            "url":"https://avmo.pw/cn/movie/:id/currentPage/:page",
+            "defaultParams":{page:1}
+        },
+        "genre":{
+            "path":"genre/:id/:page(\\d+)*",
+            "url":"https://avmo.pw/cn/genre/:id/currentPage/:page",
+            "ruleName":"index",
+            "defaultParams":{page:1}
+        },
+        "star":{
+            "path":"star/:id/:page(\\d+)*",
+            "url":"https://avmo.pw/cn/star/:id/currentPage/:page",
+            "ruleName":"index",
+            "defaultParams":{page:1}
+        }
+    }
+}
