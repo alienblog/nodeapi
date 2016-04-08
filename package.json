@@ -1,6 +1,6 @@
 {
   "name": "node-api",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "NodeApi",
   "main": "main.js",
   "author": {
@@ -16,5 +16,15 @@
     "lodash": "^4.8.2",
     "nodegrass": "0.0.3",
     "path-to-regexp": "^1.2.1"
+  },
+  "licenses" :[
+    { 
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "repository" :{ 
+    "type" : "git",
+    "url" : "git@git.oschina.net:alienblog/nodeapi.git"
   }
 }

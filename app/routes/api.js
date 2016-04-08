@@ -17,14 +17,11 @@ function copy(p){
     return c;
 }
 
-function addApi(siteName){
-	var siteConfig = siteManager.getSiteConfig(siteName);
-	var prefix = siteName+'/';
-	for(var ruleName in siteConfig.rules){
-		var rule = siteConfig.rules[ruleName];
-		var url = prefix + rule.path;
-		var toPath = pathToRegexp.compile(rule.url);
-		api.get[url] = function*(next){
+function ApiFunc(siteName,ruleName,rule){
+	var toPath = pathToRegexp.compile(rule.url);
+	
+	this.getFunc = function(){
+		return function*(){
 			var params = this.params;
 			if(rule.defaultParams){
 				var defaultParams = copy(rule.defaultParams);
@@ -35,6 +32,18 @@ function addApi(siteName){
 			this.type = 'application/json';
 			this.body = result;
 		}
+	} 
+}
+
+function addApi(siteName){
+	var siteConfig = siteManager.getSiteConfig(siteName);
+	var prefix = siteName+'/';
+	for(var ruleName in siteConfig.rules){
+		var rule = siteConfig.rules[ruleName];
+		var url = prefix + rule.path;
+		var toPath = pathToRegexp.compile(rule.url);
+		var apiFunc = new ApiFunc(siteName,ruleName,rule);
+		api.get[url] = apiFunc.getFunc();
 	}
 }
 
